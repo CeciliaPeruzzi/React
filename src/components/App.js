@@ -1,4 +1,4 @@
-
+import React from "react";
 import Sidebar from "./Sidebar";
 import ContentWrapper from "./ContentWrapper";
 
@@ -7,9 +7,10 @@ import ContentWrapper from "./ContentWrapper";
 function App() {
   return (
     <>
-    <Sidebar/>
-    <ContentWrapper/>
-    
+      <div id="wrapper">
+        <Sidebar/>
+        <ContentWrapper/>
+      </div>
     
     </>
   );
