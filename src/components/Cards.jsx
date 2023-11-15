@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+import PropTypes from "prop-types";
 
 const Cards = (props) => {
   return (
@@ -20,5 +21,21 @@ const Cards = (props) => {
         </div>
   )
 }
+
+    Cards.propTypes = {
+        atributes: PropTypes.shape({
+        titulo: PropTypes.string.isRequired,
+        cifra: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        color: PropTypes.string.isRequired,
+        icono: PropTypes.string.isRequired
+        })
+    }
+
+    Cards.defaultProps = {
+        titulo: "noName",
+        cifra: 0,
+        color: "primary",
+        icono: "fa-user"
+    }
 
 export default Cards;
