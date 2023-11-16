@@ -20,11 +20,8 @@ class GenresInDb extends Component {
         })
     }
 
-
     render () {
         return (
-        
-        
             <div className="col-lg-6 mb-4">						
                 <div className="card shadow mb-4">
                     <div className="card-header py-3">
