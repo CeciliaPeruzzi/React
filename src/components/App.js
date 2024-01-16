@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import ContentWrapper from "./ContentWrapper";
+
 
 
 
@@ -9,7 +9,7 @@ function App() {
     <>
       <div id="wrapper">
         <Sidebar/>
-        <ContentWrapper/>
+        
       </div>
     
     </>

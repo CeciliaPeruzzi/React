@@ -1,5 +1,11 @@
 import React from "react";
 import image from "../assets/images/logo-DH.png";
+import {Link, Route, Switch} from 'react-router-dom'
+import ContentWrapper from "./ContentWrapper";
+import GenresInDb from "./GenresInDb";
+import LastMovieInDb from "./LastMovieInDb";
+import ContentRowMovies from "./ContentRowMovies";
+
 
 function Sidebar () {
     return (
@@ -8,20 +14,20 @@ function Sidebar () {
             <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
-                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
                     <div className="sidebar-brand-icon">
                         <img className="w-100" src={image} alt="Digital House"/>
                     </div>
-                </a>
+                </Link>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider my-0"/>
 
                 {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
-                    <a className="nav-link" href="/">
+                    <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span></a>
+                        <span>Dashboard - DH movies</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -32,24 +38,24 @@ function Sidebar () {
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                    <a className="nav-link collapsed" href="/">
+                    <Link className="nav-link collapsed" to="/genreinDb">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
-                    </a>
+                        <span>Genres In Db</span>
+                    </Link>
                 </li>
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
+                    <Link className="nav-link" to="/lastMovieIndb">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></a>
+                        <span>Last Movie In Db</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
+                    <Link className="nav-link" to="/contentRowMovie">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></a>
+                        <span>Content Row Movies</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -57,7 +63,34 @@ function Sidebar () {
             </ul>
             {/*<!-- End of Sidebar -->*/}
             
-        </React.Fragment>
+
+        <Switch> 
+            <Route path="/" exact={true}>
+
+                <ContentWrapper/>
+
+            </Route> 
+
+            <Route path="/genreinDb" exact={true}>
+
+                <GenresInDb/>
+
+            </Route> 
+
+            <Route path="/lastMovieIndb" exact={true}>
+
+                <LastMovieInDb/>
+
+            </Route> 
+
+            <Route path="/contentRowMovie" exact={true}>
+
+                <ContentRowMovies/>
+
+            </Route>  
+        </Switch>   
+    
+    </React.Fragment>
 
     )
 }
